@@ -35,8 +35,14 @@ while diamonds:
     choice = input("Press enter to pick a card, or Q then enter to quit: ")
 
     if choice == "yes":
-        hand = [diamonds.pop()]
-        print("Your hand: " + hand)
+        
+        pick = random.choice(diamonds)
+
+        index_of_pick = diamonds.index(pick)
+
+        hand.append(pick)
+        diamonds.pop(index_of_pick)
+        print("Your hand: ", hand)
         print("Reamining cards: ", diamonds)
     if choice == ("Q" and "q"):
         quit()    
